@@ -5,12 +5,14 @@ import Home from "./Home";
 import Actors from "./Actors";
 import Directors from "./Directors";
 import Movies from "./Movies";
+import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
 
 function App() {
   const [page, setPage] = useState("/");
 
   return (
     <div>
+      <BrowserRouter>
       <NavBar onChangePage={setPage} />
       <Switch>
         <Route exact path="/">
@@ -26,6 +28,7 @@ function App() {
           <Movies />
         </Route>
       </Switch>
+      </BrowserRouter>
     </div>
   );
 }
